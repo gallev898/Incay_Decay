@@ -1,0 +1,2 @@
+Acc for: dotproduct_cifar10 is : 0.877
+Acc for: cifar10_dotproduct_incay_w_decay_c_a5_b0.5 is : 0.847

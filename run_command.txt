@@ -1,0 +1,45 @@
+
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a2_b0.15 --alpha 2 --beta 0.15 --loss incay_w_decay_c --cuda 0
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a5_b0.5 --alpha 5 --beta 0.5 --loss incay_w_decay_c --cuda 1  #SEEMS LIKE THE BEST
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a1_b0.3 --alpha 1 --beta 0.3 --loss incay_w_decay_c --cuda 2
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a8_b0.5 --alpha 8 --beta 0.5 --loss incay_w_decay_c --cuda 3
+
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a2_b0.15 --alpha 2 --beta 0.15 --loss incay_w_decay_c --train_dataset cifar100
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a5_b0.5 --alpha 5 --beta 0.5 --loss incay_w_decay_c --train_dataset cifar100
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a1_b0.3 --alpha 1 --beta 0.3 --loss incay_w_decay_c --train_dataset cifar100
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a8_b0.5 --alpha 8 --beta 0.5 --loss incay_w_decay_c --train_dataset cifar100
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a2_b0.2 --alpha 2 --beta 0.2 --loss incay_w_decay_c --train_dataset cifar100
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a3_b0.3 --alpha 3 --beta 0.3 --loss incay_w_decay_c --train_dataset cifar100
+
+python main.py --runname cifar10_cosine_incay_c_decay_w_a5_b0.5 --alpha 5 --beta 0.5 --loss incay_c_decay_w --wd --normalize --scale 10  --cuda 0
+python main.py --runname cifar10_cosine_incay_c_decay_w_a2_b0.15 --alpha 2 --beta 0.15 --loss incay_c_decay_w --wd --normalize --scale 10  --cuda 1
+python main.py --runname cifar10_cosine_incay_c_decay_w_a1_b0.3 --alpha 1 --beta 0.3 --loss incay_c_decay_w --wd --normalize --scale 10  --cuda 2
+python main.py --runname cifar10_cosine_incay_c_decay_w_a8_b0.5 --alpha 8 --beta 0.5 --loss incay_c_decay_w --wd --normalize --scale 10  --cuda 3
+
+#epochs = 100000000
+
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a2_b0.15_run2 --alpha 2 --beta 0.15 --loss incay_w_decay_c --cuda 0 --collect_per_sample --epochs 100000000
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a5_b0.5_run2 --alpha 5 --beta 0.5 --loss incay_w_decay_c --cuda 1 --collect_per_sample  --epochs 100000000
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a1_b0.3_run2 --alpha 1 --beta 0.3 --loss incay_w_decay_c --cuda 2 --collect_per_sample  --epochs 100000000
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a8_b0.5_run2 --alpha 8 --beta 0.5 --loss incay_w_decay_c --cuda 3 --collect_per_sample  --epochs 100000000
+
+# per sample collector no incay_decay
+python main.py --runname cifar10_dotproduct  --cuda 0 --collect_per_sample                                          # with wd
+python main.py --runname cifar10_dotproduct  --cuda 1 --collect_per_sample                                         # with wd
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a5_b0.5_no_wd --alpha 5 --beta 0.5 --loss incay_w_decay_c --cuda 2 --wd --collect_per_sample #without wd
+python main.py --runname cifar100_dotproduct_incay_w_decay_c_a2_b0.2_no_wd --alpha 2 --beta 0.2 --loss incay_w_decay_c --cuda 3 --train_dataset cifar100 --wd --collect_per_sample #without wd
+
+# fixed
+python main.py --runname cifar10_dotproduct_incay_w_decay_c_a5_b0.5_fixed --fixed --alpha 5 --beta 0.5 --loss incay_w_decay_c --cuda 2  --collect_per_sample
+
+# freeze
+python main.py --runname cifar10_freeze --freeze --cuda 2 --collect_per_sample
+
+#cifar100
+python main.py --runname cifar100_dotproduct_no_wd --wd --collect_per_sample --cuda 0 --train_dataset cifar100
+python main.py --runname cifar100_dotproduct --collect_per_sample --cuda 1 --train_dataset cifar100
+
+
+
+scp -r /Users/gallevshalev/PycharmProjects/Incay_Decay lobot:/home/mlspeech/gshalev/gal
+
