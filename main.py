@@ -243,8 +243,9 @@ def collect_conf(conf, pred, target, collector, per_sample_collector, samples_na
 
     for c, p, t, s_n in zip(conf, pred, target, samples_names):
         confidence = c[p.item()]
+        confidence_for_target = c[t.item()]
         if per_sample_collector is not None:
-            per_sample_collector[s_n][PER_SAMPLE_KEYS.conf.value].append(confidence)
+            per_sample_collector[s_n][PER_SAMPLE_KEYS.conf.value].append(confidence_for_target)
         if p.item() == t.item():
             correct_conf.append(confidence)
         else:
@@ -410,7 +411,7 @@ def get_sample_collector(collect_per_sample, train_loader):
                     per_sample_collector[i][PER_SAMPLE_KEYS.norm.value] = []
                     per_sample_collector[i][PER_SAMPLE_KEYS.cosine.value] = []
 
-        assert len(per_sample_collector) == 50000, 'len(per_sample_collector) = {}'.format(len(per_sample_collector))
+        assert len(per_sample_collector) == 49999, 'len(per_sample_collector) = {}'.format(len(per_sample_collector))
     return per_sample_collector
 
 

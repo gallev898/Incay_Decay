@@ -14,6 +14,8 @@ class PATHS(Enum):
     WANDB = '/yoav_stg/gshalev/wandb'
     MODEL_SAVE_DIR = '/yoav_stg/gshalev/gal/incay_decay/{}'
     COLLECTOR_SAVE_DIR = '/yoav_stg/gshalev/gal/incay_decay/{}'
+    COLLECTOR_PATH = '/Users/gallevshalev/Desktop/incay_decay_trained_models/{}/per_sample_collector'
+
 
 
 
@@ -29,6 +31,8 @@ def classification_layer(out, out_pre_norm, embeddings, bias, args):
 
     return output, pred, logits
 
+
+# /Users/gallevshalev/PycharmProjects/Incay_Decay/utils.py
 
 def get_args():
     parser = argparse.ArgumentParser()

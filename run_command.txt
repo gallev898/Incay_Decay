@@ -35,9 +35,12 @@ python main.py --runname cifar10_dotproduct_incay_w_decay_c_a5_b0.5_fixed --fixe
 # freeze
 python main.py --runname cifar10_freeze --freeze --cuda 2 --collect_per_sample
 
-#cifar100
+# collect per sample with dic['conf']= conf to the *target* vectore
 python main.py --runname cifar100_dotproduct_no_wd --wd --collect_per_sample --cuda 0 --train_dataset cifar100
 python main.py --runname cifar100_dotproduct --collect_per_sample --cuda 1 --train_dataset cifar100
+python main.py --runname cifar10_dotproduct --collect_per_sample --cuda 2
+python main.py --runname cifar10_dotproduct_no_wd --wd --collect_per_sample --cuda 3
+
 
 
 
